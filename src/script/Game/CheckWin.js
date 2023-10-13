@@ -15,7 +15,7 @@ export function checkForWin(array) {
         [i, 1],
         [i, 2],
       ];
-      winner += horSet.values().next().value;
+      winner += `"${horSet.values().next().value}"`;
 
       // return resultIndexes;
     }
@@ -27,7 +27,7 @@ export function checkForWin(array) {
         [2, i],
       ];
 
-      winner += VerSet.values().next().value;
+      winner += `"${VerSet.values().next().value}"`;
     }
   }
   if (firstDiagonal.size === 1 && !firstDiagonal.has(null)) {
@@ -36,7 +36,7 @@ export function checkForWin(array) {
       [1, 1],
       [2, 2],
     ];
-    winner += firstDiagonal.values().next().value;
+    winner += `"${firstDiagonal.values().next().value}"`;
   }
   if (secondDiagonal.size === 1 && !secondDiagonal.has(null)) {
     resultIndexes = [
@@ -44,7 +44,7 @@ export function checkForWin(array) {
       [1, 1],
       [2, 0],
     ];
-    winner += secondDiagonal.values().next().value;
+    winner += `"${secondDiagonal.values().next().value}"`;
   }
 
   if (count === 9) {
