@@ -11,7 +11,7 @@ export function endOfGame([indexes, winner]) {
 
   const gameResultElem = document.querySelector(".main__result");
 
-  gameResultElem.textContent = `WINNER : "${winner}"!!!`;
+  gameResultElem.textContent = winner;
 
   gameItems.forEach((item) => {
     item.classList.add("blur");

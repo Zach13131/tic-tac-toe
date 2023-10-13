@@ -9,7 +9,9 @@ export const FONTS = [
   "Short Stack",
 ];
 export let index = 0;
+export let count = 0;
 export function modifyX(value) {
   index = value;
 }
+
 // export { index };

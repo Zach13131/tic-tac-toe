@@ -1,6 +1,8 @@
+import { count } from "../Variables/Variables";
+
 export function checkForWin(array) {
   let resultIndexes = false;
-  let winner;
+  let winner = "WINNER : ";
   const firstDiagonal = new Set([array[0][0], array[1][1], array[2][2]]);
   const secondDiagonal = new Set([array[0][2], array[1][1], array[2][0]]);
   for (let i = 0, j = 2; i < 3; i++, j--) {
@@ -13,7 +15,7 @@ export function checkForWin(array) {
         [i, 1],
         [i, 2],
       ];
-      winner = horSet.values().next().value;
+      winner += horSet.values().next().value;
 
       // return resultIndexes;
     }
@@ -25,7 +27,7 @@ export function checkForWin(array) {
         [2, i],
       ];
 
-      winner = VerSet.values().next().value;
+      winner += VerSet.values().next().value;
     }
   }
   if (firstDiagonal.size === 1 && !firstDiagonal.has(null)) {
@@ -34,7 +36,7 @@ export function checkForWin(array) {
       [1, 1],
       [2, 2],
     ];
-    winner = firstDiagonal.values().next().value;
+    winner += firstDiagonal.values().next().value;
   }
   if (secondDiagonal.size === 1 && !secondDiagonal.has(null)) {
     resultIndexes = [
@@ -42,8 +44,14 @@ export function checkForWin(array) {
       [1, 1],
       [2, 0],
     ];
-    winner = secondDiagonal.values().next().value;
+    winner += secondDiagonal.values().next().value;
   }
 
+  if (count === 9) {
+    console.log("ksldfjkldajfkdjflkdj");
+    resultIndexes = true;
+    winner = "TIE";
+  }
+  winner += "!!!";
   return [resultIndexes, winner];
 }

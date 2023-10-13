@@ -1,9 +1,7 @@
 import { getRandomInt } from "./../Utilities/GetRandomNum.js";
 import { FONTS, GAME_ICONS } from "./../Variables/Variables.js";
 import { updateGameArr } from "./UpdateGame.js";
-import { index, modifyX } from "./../Variables/Variables.js";
-console.log("file: StartGame.js:5 ~ index:", index);
-// modifyX(4);
+import { index, modifyX, count } from "./../Variables/Variables.js";
 
 const toUpperLowerCase = (str) =>
   getRandomInt(0, 1) ? str.toLowerCase() : str;
@@ -48,5 +46,6 @@ export function startGameHandler(e) {
     // index = 1;
     modifyX(1);
   }
+  count++;
   updateGameArr();
 }
