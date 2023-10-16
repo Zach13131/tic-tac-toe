@@ -47,8 +47,7 @@ export function checkForWin(array) {
     winner += `"${secondDiagonal.values().next().value}"`;
   }
 
-  if (count === 9) {
-    console.log("ksldfjkldajfkdjflkdj");
+  if (count === 9 && !resultIndexes) {
     resultIndexes = true;
     winner = "TIE";
   }
