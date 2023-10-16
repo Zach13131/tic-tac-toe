@@ -47,6 +47,7 @@ export function checkForWin(array) {
     winner += `"${secondDiagonal.values().next().value}"`;
   }
 
+  console.log("file: CheckWin.js:51 ~ checkForWin ~ count:", count);
   if (count === 9 && !resultIndexes) {
     resultIndexes = true;
     winner = "TIE";

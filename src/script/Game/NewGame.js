@@ -1,6 +1,6 @@
 import { gameItems, gameBlock } from "./../Utilities/DOMitems.js";
 import { startGameHandler } from "./StartGame.js";
-import { index, modifyX } from "../Variables/Variables.js";
+import { index, modifyX, count } from "../Variables/Variables.js";
 export const newGameHandler = () => {
   gameBlock.addEventListener("click", startGameHandler);
 
@@ -14,6 +14,7 @@ export const newGameHandler = () => {
     item.classList.remove("win");
     item.textContent = "";
     modifyX(0);
+    count = 0;
     // index = 0;
   }
 };
